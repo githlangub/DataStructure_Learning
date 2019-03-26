@@ -17,7 +17,7 @@ Stack<ElemType>::Stack(void)
 
 
 template<typename ElemType>
-Stack<ElemType>::Stack(void)
+Stack<ElemType>::~Stack(void)
 {
 	delete this->data;   //释放存储空间
 
@@ -48,8 +48,10 @@ ElemType Stack<ElemType>::Pop(void)
 	//判断是否为空栈
 	if(this->len)
 	{
+		ElemType elem=this->data->ElemGet(len);
 		this->data->ElemDelete(this->len);   //删除表尾
 		this->len--;   //长度减一
+		return elem;
 	}
 	else
 	{
