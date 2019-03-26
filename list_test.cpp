@@ -14,11 +14,11 @@ int main()
 		cout<<"Length="<<list_1->GetLength()<<endl;
 
 		for(unsigned i=1;i<=25;i++)
-			list_1->ElemInsert(i,i);
+			list_1->Insert(i,i);
 
-		list_1->ElemDelete(5);
-		list_1->ElemSet(-32767,1);
-		list_1->ListPrint();
+		list_1->Delete(5);
+		list_1->Set(-32767,1);
+		list_1->Print();
 
 		cout<<"End of main"<<endl;
 	}

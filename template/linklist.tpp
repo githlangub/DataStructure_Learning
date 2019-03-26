@@ -37,7 +37,7 @@ LinkList<ElemType>::~LinkList()
 	
 	
 template<typename ElemType>
-void LinkList<ElemType>::ListClear(void)
+void LinkList<ElemType>::Clear(void)
 {
 	//从第一个节点开始迭代释放空间
 	Node<ElemType>* prev=this->head->GetNext();
@@ -61,7 +61,7 @@ void LinkList<ElemType>::ListClear(void)
 	
 	
 template<typename ElemType>
-void LinkList<ElemType>::ElemInsert(ElemType elem,unsigned pos)
+void LinkList<ElemType>::Insert(ElemType elem,unsigned pos)
 {
 	//检查pos合法性
 	if(pos<1||pos>this->len+1)
@@ -87,13 +87,13 @@ void LinkList<ElemType>::ElemInsert(ElemType elem,unsigned pos)
 		this->tail=newnode;
 
 	//总长度加一
-	this->len+=1;
+	this->len++;
 }
 
 	
 	
 template<typename ElemType>
-void LinkList<ElemType>::ElemDelete(unsigned pos)
+void LinkList<ElemType>::Delete(unsigned pos)
 {
 	//检查pos合法性
 	if(pos<1||pos>this->len)
@@ -115,13 +115,13 @@ void LinkList<ElemType>::ElemDelete(unsigned pos)
 		this->tail=last;
 
 	//总长度减一
-	this->len-=1;
+	this->len--;
 }
 
 
 
 template<typename ElemType>
-void LinkList<ElemType>::ElemSet(ElemType elem,unsigned pos)
+void LinkList<ElemType>::Set(ElemType elem,unsigned pos)
 {
 	this->LocateAddr(pos)->DataWrite(elem);
 }
@@ -129,7 +129,7 @@ void LinkList<ElemType>::ElemSet(ElemType elem,unsigned pos)
 
 
 template<typename ElemType>
-ElemType LinkList<ElemType>::ElemGet(unsigned pos)
+ElemType LinkList<ElemType>::Get(unsigned pos)
 {
 	return this->LocateAddr(pos)->DataRead();
 }
@@ -137,7 +137,7 @@ ElemType LinkList<ElemType>::ElemGet(unsigned pos)
 
 
 template<typename ElemType>
-void LinkList<ElemType>::ListPrint(void)
+void LinkList<ElemType>::Print(void)
 {
 	//从第一个节点开始迭代输出
 	Node<ElemType>* prev=this->head->GetNext();
@@ -177,33 +177,5 @@ Node<ElemType>* LinkList<ElemType>::LocateAddr(unsigned pos)
 		return prev;
 	}
 }
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

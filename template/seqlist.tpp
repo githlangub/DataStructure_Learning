@@ -36,7 +36,7 @@ SeqList<ElemType>::~SeqList()
 
 
 template<typename ElemType>
-void SeqList<ElemType>::ListClear(void)
+void SeqList<ElemType>::Clear(void)
 {
 	this->len=0;
 }
@@ -44,7 +44,7 @@ void SeqList<ElemType>::ListClear(void)
 
 
 template<typename ElemType>
-void SeqList<ElemType>::ElemInsert(ElemType elem,unsigned pos)
+void SeqList<ElemType>::Insert(ElemType elem,unsigned pos)
 {
 	//检查pos是否为合法值
 	if(pos<1||pos>this->len+1)
@@ -79,13 +79,13 @@ void SeqList<ElemType>::ElemInsert(ElemType elem,unsigned pos)
 	}
 
 	//总长度加一
-	this->len+=1;
+	this->len++;
 }
 
 
 
 template<typename ElemType>
-void SeqList<ElemType>::ElemDelete(unsigned pos)
+void SeqList<ElemType>::Delete(unsigned pos)
 {
 	//检查pos合法性
 	if(pos<1||pos>this->len)
@@ -101,13 +101,13 @@ void SeqList<ElemType>::ElemDelete(unsigned pos)
 	}
 
 	//总长度减一
-	this->len-=1;
+	this->len--;
 }
 
 	
 	
 template<typename ElemType>
-void SeqList<ElemType>::ElemSet(ElemType elem,unsigned pos)
+void SeqList<ElemType>::Set(ElemType elem,unsigned pos)
 {
 	//检查pos合法性
 	if(pos<1||pos>this->len)
@@ -123,7 +123,7 @@ void SeqList<ElemType>::ElemSet(ElemType elem,unsigned pos)
 	
 	
 template<typename ElemType>
-ElemType SeqList<ElemType>::ElemGet(unsigned pos)
+ElemType SeqList<ElemType>::Get(unsigned pos)
 {
 	//检查pos是否合法
 	if(pos<1||pos>this->len)
@@ -137,11 +137,11 @@ ElemType SeqList<ElemType>::ElemGet(unsigned pos)
 	
 	
 template<typename ElemType>
-void SeqList<ElemType>::ListPrint(void)
+void SeqList<ElemType>::Print(void)
 {
 	for(int i=1;i<=this->GetLength();i++)
 	{
-		std::cout<<this->ElemGet(i)<<std::endl;
+		std::cout<<this->Get(i)<<std::endl;
 	}
 
 	//能否用<<控制符控制,或利用重载???

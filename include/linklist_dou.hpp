@@ -12,8 +12,8 @@ class LinkList_Dou:
 	LinkList_Dou(void);
 	~LinkList_Dou();
 
-	//void ElemInsert(ElemType ,unsigned );
-	//void ElemDelete(unsigned );
+	//void Insert(ElemType ,unsigned );
+	//void Delete(unsigned );
 	//private:
 	//Node_Dou<ElemType>* LocateAddr(unsigned );
 	//private:

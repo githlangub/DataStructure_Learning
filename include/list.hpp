@@ -10,19 +10,19 @@ class List
 		virtual
 			~List()=default;   //销毁
 		virtual
-			void ListClear(void)=0;   //清空
+			void Clear(void)=0;   //清空
 
 		//元素操作相关
 		virtual
-			void ElemInsert(ElemType ,unsigned )=0;   //增加元素
+			void Insert(ElemType ,unsigned )=0;   //增加元素
 		virtual
-			void ElemDelete(unsigned )=0;   //删除元素
+			void Delete(unsigned )=0;   //删除元素
 		virtual
-			void ElemSet(ElemType ,unsigned )=0;   //改变元素
+			void Set(ElemType ,unsigned )=0;   //改变元素
 		virtual
-			ElemType ElemGet(unsigned )=0;   //查找元素
+			ElemType Get(unsigned )=0;   //查找元素
 		virtual
-			void ListPrint(void)=0;   //遍历输出
+			void Print(void)=0;   //遍历输出
 
 		//属性相关
 		inline

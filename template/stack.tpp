@@ -29,14 +29,14 @@ Stack<ElemType>::~Stack(void)
 template<typename ElemType>
 void Stack<ElemType>::Clear(void)
 {
-	this->data->ListClear();   //清空存储空间
+	this->data->Clear();   //清空存储空间
 	len=0;   //长度置0零
 }
 
 template<typename ElemType>
 void Stack<ElemType>::Push(ElemType elem)
 {
-	this->data->ElemInsert(elem,this->len+1);   //表尾插入
+	this->data->Insert(elem,this->len+1);   //表尾插入
 	this->len++;   //长度加一
 }
 
@@ -48,8 +48,8 @@ ElemType Stack<ElemType>::Pop(void)
 	//判断是否为空栈
 	if(this->len)
 	{
-		ElemType elem=this->data->ElemGet(len);
-		this->data->ElemDelete(this->len);   //删除表尾
+		ElemType elem=this->data->Get(len);
+		this->data->Delete(this->len);   //删除表尾
 		this->len--;   //长度减一
 		return elem;
 	}
@@ -68,7 +68,7 @@ ElemType Stack<ElemType>::GetTop(void)
 	//判断是否为空栈
 	if(this->len)
 	{
-		return this->data->ElemGet(this->len);   //返回表尾
+		return this->data->Get(this->len);   //返回表尾
 	}
 	else
 	{
@@ -85,7 +85,7 @@ void Stack<ElemType>::Print(void)
 	//判断是否为空栈
 	if(this->len)
 	{
-		this->data->ListPrint();   //遍历输出
+		this->data->Print();   //遍历输出
 	}
 	else
 	{

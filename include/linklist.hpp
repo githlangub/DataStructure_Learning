@@ -13,16 +13,16 @@ class LinkList:
 		LinkList(void);   //创建
 		virtual 
 			~LinkList();   //销毁
-		void ListClear(void);   //清空
+		void Clear(void);   //清空
 
 		//元素操作相关
 		virtual
-			void ElemInsert(ElemType ,unsigned );	//增加元素
+			void Insert(ElemType ,unsigned );	//增加元素
 		virtual
-			void ElemDelete(unsigned );	//删除元素
-		void ElemSet(ElemType ,unsigned );   //改变元素
-		ElemType ElemGet(unsigned );   //查找元素
-		void ListPrint(void);   //遍历输出，纵向，不支持合成类型
+			void Delete(unsigned );	//删除元素
+		void Set(ElemType ,unsigned );   //改变元素
+		ElemType Get(unsigned );   //查找元素
+		void Print(void);   //遍历输出，纵向，不支持合成类型
 	protected:
 		Node<ElemType>* head;   //头指针
 		Node<ElemType>* tail;   //尾指针
