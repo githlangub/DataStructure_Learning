@@ -69,7 +69,7 @@ Node<ElemType>* Node<ElemType>::RemoveNext()
 
 
 template<typename ElemType>
-Node<ElemType>* Node<ElemType>::GetNext()
+Node<ElemType>* Node<ElemType>::GetNext(void)
 {
 	return this->next;
 }
@@ -77,7 +77,7 @@ Node<ElemType>* Node<ElemType>::GetNext()
 
 
 template<typename ElemType>
-Node_DouDir<ElemType>::Node_DouDir(ElemType elem)
+Node_Dou<ElemType>::Node_Dou(ElemType elem)
 {
 	this->data=elem;
 	this->next=NULL;
@@ -89,7 +89,7 @@ Node_DouDir<ElemType>::Node_DouDir(ElemType elem)
 	
 	
 template<typename ElemType>
-Node_DouDir<ElemType>::Node_DouDir(void)
+Node_Dou<ElemType>::Node_Dou(void)
 {
 	this->data=0;
 	this->next=NULL;
@@ -101,7 +101,7 @@ Node_DouDir<ElemType>::Node_DouDir(void)
 
 
 template<typename ElemType>
-Node_DouDir<ElemType>::~Node_DouDir()
+Node_Dou<ElemType>::~Node_Dou()
 {
 	//std::cout<<"A double-direction-node is deleted"<<std::endl;
 }
@@ -109,7 +109,7 @@ Node_DouDir<ElemType>::~Node_DouDir()
 	
 	
 template<typename ElemType>
-void Node_DouDir<ElemType>::LinkPrior(Node_DouDir* priornode)
+void Node_Dou<ElemType>::LinkPrior(Node_Dou* priornode)
 {
 	this->prior=priornode;
 }
@@ -117,9 +117,9 @@ void Node_DouDir<ElemType>::LinkPrior(Node_DouDir* priornode)
 
 
 template<typename ElemType>
-Node_DouDir<ElemType>* Node_DouDir<ElemType>::RemovePrior()
+Node_Dou<ElemType>* Node_Dou<ElemType>::RemovePrior()
 {
-	Node_DouDir<ElemType>* priornode=this->prior;
+	Node_Dou<ElemType>* priornode=this->prior;
 	this->prior=NULL;
 	return priornode;
 }
@@ -127,7 +127,7 @@ Node_DouDir<ElemType>* Node_DouDir<ElemType>::RemovePrior()
 
 
 template<typename ElemType>
-Node_DouDir<ElemType>* Node_DouDir<ElemType>::GetPrior()
+Node_Dou<ElemType>* Node_Dou<ElemType>::GetPrior()
 {
 	return this->prior;
 }

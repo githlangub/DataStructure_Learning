@@ -23,6 +23,7 @@ LinkList<ElemType>::~LinkList()
 	//从头节点开始迭代释放空间
 	Node<ElemType>* prev=this->head;
 	Node<ElemType>* next=NULL;
+	head=tail=NULL;   //头尾指针回收
 	do
 	{
 		next=prev->GetNext();

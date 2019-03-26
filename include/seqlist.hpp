@@ -4,7 +4,8 @@
 #include"list.hpp"
 
 template<typename ElemType>
-class SeqList: public List<ElemType>
+class SeqList:
+	public List<ElemType>
 {
 	public:
 		//物理实现相关
