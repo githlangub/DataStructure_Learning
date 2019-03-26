@@ -1,13 +1,14 @@
 #include<iostream>
 using namespace std;
 
+class A
+{};
+class B:public A
+{};
+class C:public B
+{};
 int main()
 {
-	int a=1;
-	unsigned b=a;
-	cout<<b<<endl;
-	a=-1;
-	b=a;
-	cout<<b<<endl;
+	A* pA=new C;
 	return 0;
 }
