@@ -3,7 +3,7 @@
 
 #include<iostream>
 #include"../include/stack.hpp"
-#include"../include/linklist.hpp"
+#include"linklist.tpp"
 
 template<typename ElemType>
 Stack<ElemType>::Stack(void)
