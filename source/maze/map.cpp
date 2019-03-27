@@ -6,7 +6,7 @@
 
 Map::Map(void)
 {
-	this->map_size=10;
+	this->map_size=20;
 	ent=this->GenerateDefault();
 
 	std::cout<<"A maze map in default type is generated!"<<std::endl;
@@ -31,7 +31,7 @@ inline MapType Map::Read(Coordinate ori)
 
 inline void Map::Write(MapType type,Coordinate ori)
 {
-	this->map[ori.x-1][ori.y-1]==type;
+	this->map[ori.x-1][ori.y-1]=type;
 }
 
 
@@ -45,9 +45,9 @@ inline Coordinate Map::GetEntrance(void)
 
 void Map::Print(void)
 {
-	for(int i=0;i<10;i++)
+	for(int i=0;i<map_size;i++)
 	{
-		for(int j=0;j<10;j++)
+		for(int j=0;j<map_size;j++)
 		{
 			switch(this->map[i][j])
 			{
@@ -66,25 +66,29 @@ void Map::Print(void)
 
 Coordinate Map::GenerateDefault(void)
 {
-	for(int i=0;i<10;i++)
+	for(int i=0;i<this->map_size;i++)
 	{
-		for(int j=0;j<10;j++)
+		for(int j=0;j<this->map_size;j++)
 		{
-			if(
-			   ((i==1||i==8)&&(j!=0&&j!=9))||
-			   ((j==1||j==8)&&(i!=0&&i!=9))
-			  )
-			{
-				this->map[i][j]=UNEXPLORED;
-			}
-			else
-			{
-				this->map[i][j]=WALL;
-			}
+			this->map[i][j]=WALL;
 		}
 	}
-	this->map[8][9]=EXIT;
-	return {1,1};
+	for(int i=1;i<this->map_size-1;i++)
+	{
+		for(int j=1;j</*this->map_size-1*/2;j++)
+		{
+			this->map[i][j]=UNEXPLORED;
+		}
+	}
+	/*for(int i=2;i<this->map_size-2;i++)
+	{
+		for(int j=2;j<this->map_size-2;j++)
+		{
+			this->map[i][j]=WALL;
+		}
+	}*/
+	//this->map[map_size-1][map_size-2]=EXIT;
+	return {2,2};
 }
 
 #endif

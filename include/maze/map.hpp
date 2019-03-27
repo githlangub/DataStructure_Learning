@@ -1,10 +1,7 @@
 #ifndef _MAP_HPP
 #define _MAP_HPP
 
-typedef struct
-{
-	unsigned x,y;
-}Coordinate;
+#include"../coordinate.hpp"
 
 typedef enum
 {
@@ -32,7 +29,7 @@ class Map
 		Coordinate GenerateDefault(void);
 
 		unsigned map_size;
-		MapType map[10][10];
+		MapType map[20][20];
 		Coordinate ent;
 };
 

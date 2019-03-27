@@ -4,16 +4,22 @@
 #include<iostream>
 #include"../../include/maze/maze.hpp"
 #include"../../include/maze/map.hpp"
+#include"map.cpp"
 #include"../../include/stack.hpp"
 
 Maze::Maze(void)
 {
 	this->cur=this->map.GetEntrance();
+	this->map.Print();
 }
 
 
 
-//Maze::Maze(Map map)
+Maze::Maze(Map map)
+{
+	this->map=map;
+	this->cur=this->map.GetEntrance();
+}
 
 
 
@@ -26,21 +32,26 @@ Maze::~Maze()
 
 void Maze::path(void)
 {
-	Stack<Coordinate> path;
+	//Stack<Coordinate> path;
+	Stack<unsigned> path;
 	while(this->map.Read(cur)!=EXIT)
 	{
 		Coordinate next=Explore(cur);
 		if(next.x!=0&&next.y!=0)
 		{
 			this->map.Write(FOOTPRINT,cur);
-			path.Push(this->cur);
+			//path.Push(this->cur);
+			path.Push(this->cur.x);
+			path.Push(this->cur.y);
 			this->cur=next;
 		}
 		else
 		{
 			try
 			{
-				this->cur=path.Pop();
+				//this->cur=path.Pop();
+				this->cur.y=path.Pop();
+				this->cur.x=path.Pop();
 			}
 			catch(unsigned )
 			{
@@ -50,6 +61,7 @@ void Maze::path(void)
 		}
 	}
 	std::cout<<"Success!"<<std::endl;
+	this->map.Print();
 }
 
 

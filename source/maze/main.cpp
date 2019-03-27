@@ -5,7 +5,9 @@ using namespace std;
 
 int main()
 {
-	Map map1;
-	map1.Print();
+	Maze maze1;
+	maze1.path();
+	//Map map1;
+	//map1.Print();
 	return 0;
 }

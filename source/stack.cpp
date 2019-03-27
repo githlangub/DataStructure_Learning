@@ -1,7 +1,8 @@
 #include"../template/stack.tpp"
 
 //template class Stack<int>;
+template class Stack<unsigned>;
 
-#include"../include/maze/map.hpp"
+//#include"../include/coordinate.hpp"
 
-template class Stack<Coordinate>;
+//template class Stack<Coordinate>;

@@ -2,15 +2,15 @@
 #define _MAZE_HPP
 
 #include"map.hpp"
-
-//typedef enum{NONE,WEST,NORTH,EAST,SOUTH} Direction;
+#include"../coordinate.hpp"
 
 class Maze
 {
 	public:
 		Maze(void);
-		//Maze(Map );
+		Maze(Map );
 		~Maze();
+
 		void path(void);
 	private:
 		Coordinate Explore(Coordinate );
