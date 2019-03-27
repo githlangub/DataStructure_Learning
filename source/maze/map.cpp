@@ -75,19 +75,19 @@ Coordinate Map::GenerateDefault(void)
 	}
 	for(int i=1;i<this->map_size-1;i++)
 	{
-		for(int j=1;j</*this->map_size-1*/2;j++)
+		for(int j=1;j<this->map_size-1;j++)
 		{
 			this->map[i][j]=UNEXPLORED;
 		}
 	}
-	/*for(int i=2;i<this->map_size-2;i++)
+	for(int i=2;i<this->map_size-2;i++)
 	{
 		for(int j=2;j<this->map_size-2;j++)
 		{
 			this->map[i][j]=WALL;
 		}
-	}*/
-	//this->map[map_size-1][map_size-2]=EXIT;
+	}
+	this->map[map_size-1][map_size-5]=EXIT;
 	return {2,2};
 }
 

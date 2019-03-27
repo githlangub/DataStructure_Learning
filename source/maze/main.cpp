@@ -5,9 +5,16 @@ using namespace std;
 
 int main()
 {
-	Maze maze1;
-	maze1.path();
-	//Map map1;
-	//map1.Print();
+	try
+	{
+		Maze maze1;
+		maze1.path();
+		//Map map1;
+		//map1.Print();
+	}
+	catch(const char* warn)
+	{
+		cout<<warn<<endl;
+	}
 	return 0;
 }

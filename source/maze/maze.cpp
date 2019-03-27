@@ -36,10 +36,10 @@ void Maze::path(void)
 	Stack<unsigned> path;
 	while(this->map.Read(cur)!=EXIT)
 	{
+		this->map.Write(FOOTPRINT,cur);
 		Coordinate next=Explore(cur);
 		if(next.x!=0&&next.y!=0)
 		{
-			this->map.Write(FOOTPRINT,cur);
 			//path.Push(this->cur);
 			path.Push(this->cur.x);
 			path.Push(this->cur.y);
