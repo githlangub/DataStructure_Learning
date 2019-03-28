@@ -2,21 +2,22 @@
 #define _MAZE_HPP
 
 #include"map.hpp"
-#include"../coordinate.hpp"
+#include"explorer.hpp"
 
 class Maze
 {
 	public:
 		Maze(void);
-		Maze(Map );
+		Maze(Map* );
 		~Maze();
 
 		void path(void);
 	private:
-		Coordinate Explore(Coordinate );
+		void MapCheck(void);
 
-		Map map;
-		Coordinate cur;
+		Map* map;
+		Explorer explorer;
+	friend class Explorer;
 };
 
 #endif

@@ -3,11 +3,36 @@
 
 #include<iostream>
 #include"../../include/maze/map.hpp"
+#include"../../include/coordinate.hpp"
 
 Map::Map(void)
 {
-	this->map_size=20;
-	ent=this->GenerateDefault();
+	//生成默认简易地图
+	this->side_len=20;   //确定边长
+	for(int i=0;i<this->side_len;i++)
+	{
+		for(int j=0;j<this->side_len;j++)
+		{
+			this->map[i][j]=WALL;
+		}
+	}
+	for(int i=1;i<this->side_len-1;i++)
+	{
+		for(int j=1;j<this->side_len-1;j++)
+		{
+			this->map[i][j]=UNEXPLORED;
+		}
+	}
+	for(int i=2;i<this->side_len-2;i++)
+	{
+		for(int j=2;j<this->side_len-2;j++)
+		{
+			this->map[i][j]=WALL;
+		}
+	}
+	this->map[side_len-1][side_len-5]=EXIT;   //确定出口
+	this->map[1+1][1+1]=ENTRANCE;	//确定入口
+	this->ent={1+1,1+1};
 
 	std::cout<<"A maze map in default type is generated!"<<std::endl;
 }
@@ -45,9 +70,9 @@ inline Coordinate Map::GetEntrance(void)
 
 void Map::Print(void)
 {
-	for(int i=0;i<map_size;i++)
+	for(int i=0;i<side_len;i++)
 	{
-		for(int j=0;j<map_size;j++)
+		for(int j=0;j<side_len;j++)
 		{
 			switch(this->map[i][j])
 			{
@@ -60,35 +85,6 @@ void Map::Print(void)
 		std::cout<<std::endl;
 	}
 	std::cout<<std::endl;
-}
-
-
-
-Coordinate Map::GenerateDefault(void)
-{
-	for(int i=0;i<this->map_size;i++)
-	{
-		for(int j=0;j<this->map_size;j++)
-		{
-			this->map[i][j]=WALL;
-		}
-	}
-	for(int i=1;i<this->map_size-1;i++)
-	{
-		for(int j=1;j<this->map_size-1;j++)
-		{
-			this->map[i][j]=UNEXPLORED;
-		}
-	}
-	for(int i=2;i<this->map_size-2;i++)
-	{
-		for(int j=2;j<this->map_size-2;j++)
-		{
-			this->map[i][j]=WALL;
-		}
-	}
-	this->map[map_size-1][map_size-5]=EXIT;
-	return {2,2};
 }
 
 #endif

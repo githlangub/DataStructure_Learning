@@ -5,7 +5,7 @@
 
 typedef enum
 {
-	WALL,EXIT,UNEXPLORED,FOOTPRINT
+	WALL,EXIT,ENTRANCE,UNEXPLORED,FOOTPRINT
 }MapType;
 
 /*typedef struct
@@ -17,20 +17,18 @@ typedef enum
 class Map
 {
 	public:
-		Map(void);
-		//MapTest(unsigned );
+		Map(void);   //生成地图
 		~Map();
 
-		MapType Read(Coordinate );
-		void Write(MapType ,Coordinate );
-		Coordinate GetEntrance(void);
-		void Print(void);
+		MapType Read(Coordinate );   //根据坐标返回区域类型
+		void Write(MapType ,Coordinate );   //根据坐标改变区域类型
+		Coordinate GetEntrance(void);   //查看入口坐标
+		void Print(void);   //打印地图
 	private:
-		Coordinate GenerateDefault(void);
-
-		unsigned map_size;
-		MapType map[20][20];
-		Coordinate ent;
+		unsigned side_len;   //地图边长(统一为正方形)
+		MapType map[20][20];   //地图(暂时用二维数组)
+		//Lattice* map;   //地图
+		Coordinate ent;   //入口
 };
 
 #endif

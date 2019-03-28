@@ -4,18 +4,16 @@
 #include<iostream>
 #include"../../include/maze/maze.hpp"
 #include"../../include/maze/map.hpp"
-#include"map.cpp"
-#include"../../include/stack.hpp"
 
 Maze::Maze(void)
 {
-	this->cur=this->map.GetEntrance();
+
 	this->map.Print();
 }
 
 
 
-Maze::Maze(Map map)
+Maze::Maze(Map* new_map)
 {
 	this->map=map;
 	this->cur=this->map.GetEntrance();
